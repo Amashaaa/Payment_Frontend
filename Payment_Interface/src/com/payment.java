@@ -87,7 +87,7 @@ public class payment {
 				output += "<td><input name=\"btnUpdate\" type=\"button\" value=\"Update\" class=\"btnUpdate btn btn-secondary\"></td>"
 						+ "<td><form method=\"post\" action=\"payment.jsp\">"
 						+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\" class=\"btn btn-danger\">"
-						+ "<input name=\"hidItemIDDelete\" type=\"hidden\"\r\n" + "value=\"" +pay_id+ "\">" + " </form> </td> </tr> ";
+						+ "<input name=\"hidPaymentIDDelete\" type=\"hidden\"\r\n" + "value=\"" +pay_id+ "\">" + " </form> </td> </tr> ";
 			}
 			con.close();
 			// Complete the html table
