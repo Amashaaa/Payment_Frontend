@@ -1,21 +1,24 @@
 package com;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+
+
 public class payment {
+	
+
 	// A common method to connect to the DB
 	private Connection connect() {
 		Connection con = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Provide the correct details: DBServer/DBName, username, password
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/payment", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/payment?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,8 +74,10 @@ public class payment {
 				String CVV = rs.getString("CVV");
 				String Date = rs.getString("Date");
 				String Total_amount = Double.toString(rs.getDouble("Total_amount"));
+				
 				// Add into the html table
-				output += "<tr><td><input id=\"hidItemIDUpdate\" name=\"hidItemIDUpdate\" type=\"hidden\" value=\"" + pay_id + "\">" + pay_id + "</td>";
+				
+				output += "<tr><td><input id=\"hidPaymentIDUpdate\" name=\"hidPaymentIDUpdate\" type=\"hidden\" value=\"" + pay_id + "\">" + pay_id + "</td>";
 				output += "<td>" + Card_holder + "</td>";
 				output += "<td>" + Card_number + "</td>";
 				output += "<td>" + CVV + "</td>";
