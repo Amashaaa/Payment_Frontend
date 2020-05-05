@@ -41,6 +41,7 @@ $(document).on("click", "#btnSave", function(event)
 
 function onPaymentSaveComplete(response, status)
 {
+	console.log(response);
 	if (status == "success")
 	{
 		var resultSet = JSON.parse(response);

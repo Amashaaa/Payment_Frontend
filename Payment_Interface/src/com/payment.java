@@ -91,7 +91,7 @@ public class payment {
 			}
 			
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>pay_id</th> <th>Card_holder</th> <th>Card_number</th> <th>CVV</th> <th>Date</th> <th>Total_amount</th> <th>Update</th> <th>Remove</th> </tr>";
+			output = "<table class=\"table table-hover\" ><tr  class=\"table-secondary\"><th scope=\"col\">pay_id</th> <th scope=\"col\">Card_holder</th> <th scope=\"col\">Card_number</th> <th scope=\"col\">CVV</th> <th scope=\"col\">Date</th> <th scope=\"col\">Total_amount</th> <th scope=\"col\">Update</th> <th scope=\"col\">Remove</th> </tr>";
 			String query = "select * from pay_form";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
