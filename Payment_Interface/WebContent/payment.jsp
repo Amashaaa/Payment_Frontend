@@ -3,60 +3,6 @@
     pageEncoding="ISO-8859-1"%>
 
 
-<%
-
-	//Initiaize----------------------------
-	
-		session.setAttribute("statusMsg","");
-		System.out.println("Trying to process");
-		
-	//Save-------------------------------------------
-	
-	if (request.getParameter("pay_id") != null)
-	{
-		payment paymentObj = new payment();
-		String stsMsg = "";
-	
-	//Insert----------------------------------
-	
-	if (request.getParameter("hidPaymentIDSave") == "")
-	{
-		stsMsg = paymentObj.insertPayment (	
-		request.getParameter("Card_holder"),
-		request.getParameter("Card_number"),
-		request.getParameter("CVV"),
-		request.getParameter("Date"),
-		request.getParameter("Total_amount")
-		);
-	}
-	else
-	//Update------------------------------------------
-	
-	{
-		stsMsg = paymentObj.updatePayment(request.getParameter("hidPaymentIDSave"),
-				request.getParameter("Card_holder"),
-				request.getParameter("Card_number"),
-				request.getParameter("CVV"),
-				request.getParameter("Date"),
-				request.getParameter("Total_amount")
-				);
-	}
-	session.setAttribute("statusMsg", stsMsg);
-	}
-	
-	//Delete-------------------------------------------
-	
-	if (request.getParameter("hidPaymentIDDelete") != null)
-	{
-		payment paymentObj = new payment();
-		String stsMsg =
-		paymentObj.deletePayment(request.getParameter("hidPaymentIDDelete"));
-		session.setAttribute("statusMsg", stsMsg);
-	}
-
-%>    
-    
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,12 +42,10 @@
 					<input type="hidden" id="hidPaymentIDSave" name="hidPaymentIDSave" value="">
 				</form>
 				
-				<div id ="alertSuccess" class="alert alert-success">
-				<%
-				out.print(session.getAttribute("statusMsg"));
-				%>
-				</div>
+				<div id ="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
+				<br>
+				<div id="divPaymentGrid"> 
 				
 				<br>
 				
@@ -110,6 +54,7 @@
 					out.print(paymentObj.readPayment());
 					
 				%>
+				</div>
 		</div>
 	</div>
 </div>
