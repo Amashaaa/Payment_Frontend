@@ -160,12 +160,12 @@ function validatePaymentForm()
 			return "Insert the CVV of the card.";
 		}
 		
-		//is numerical value
-		var cvv = $("#CVV").val().trim();
-		if (!$.isNumeric(cvv))
-		{
-			return "Insert a 3 digit numerical value for the CVV.";
-		}
+// 		//is numerical value
+// 		var cvv = $("#CVV").val().trim();
+// 		if (!$.isNumeric(cvv))
+// 		{
+// 			return "Insert a 3 digit numerical value for the CVV.";
+// 		}
 		
 		// Date
 		if ($("#Date").val().trim() == "")
