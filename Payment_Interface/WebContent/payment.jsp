@@ -16,17 +16,17 @@
 <body>
 	<div class="container-fluid">
 		<nav class="navbar navbar-light bg-primary mt-1">
-		  <a class="navbar-brand" style="color:white;" href="#">Payment Management</a>
+		  <a class="navbar-brand" style="color:white;" href="#">MyDoctor Payment Management</a>
 		</nav>	
 	</div>
 	<div class="container">
 		<div class="jumbotron mt-5 col-12">
-		  <h1 class="display-4">My Doctor Payment Management</h1>
-		  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		  <h1 class="display-4">Payment Management</h1>
+		  <p class="lead">Simply after making the appointments you can now pay for your upcoming appointments now. It's much easier cause everything is handled online.</p>
 		  <hr class="my-4">
-		  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		  <p>To Proceed with the payment.Press the Continue Button. And you can proceed with the payment.</p>
 		  <p class="lead">
-		    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		    <a class="btn btn-primary btn-lg" href="payment.jsp" role="button">Continue</a>
 		  </p>
 		</div>
 		
